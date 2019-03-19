@@ -44,8 +44,24 @@ using System.Linq;
 class MainClass {
   public static string LongestWord(string sen) { 
     string[] words = sen.Split(' ');
-    return words.OrderByDescending( s => s.Length ).First();;
+    return words.OrderByDescending( s => RemovePunctuation(s).Length ).First();;
   }
+ 
+ public static string RemovePunctuation(string word)
+  {
+      StringBuilder wordWithoutPunctuation = new StringBuilder();
+      
+      foreach (char c in word)
+      {
+          if (!char.IsPunctuation(c))
+          {
+              wordWithoutPunctuation.Append(c);
+          }
+      }
+      
+      return wordWithoutPunctuation.ToString();
+  }
+	
   static void Main() {  
     // keep this function call here
     Console.WriteLine(LongestWord(Console.ReadLine()));
