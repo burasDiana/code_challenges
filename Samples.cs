@@ -40,8 +40,42 @@ class MainClass {
       }
       return wordWithoutPunctuation.ToString();
   }
-	
   
+	/*Have the function LetterChanges(str) take the str parameter being passed and modify it 
+	using the following algorithm. Replace every letter in the string with the letter following it in the alphabet
+	(ie. c becomes d, z becomes a). Then capitalize every vowel in this new string (a, e, i, o, u) and 
+	finally return this modified string. Use the Parameter Testing feature in the box below to test 
+	your code with different arguments.*/
+
+	public static string LetterChanges(string input)
+        {
+            char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            char[] vowels = "aeiou".ToCharArray();
+            char[] inputCopy = input.ToCharArray();
+
+            for(int i = 0; i<= input.Length-1; i++)
+            {
+                if (alphabet.Contains(input[i])) //if it is a letter 
+                {
+                    int index = Array.IndexOf(alphabet, input[i]);
+                    if (index == alphabet.Length - 1) //is it the last letter? a.k.a 'z'
+                    {
+                        inputCopy[index] = alphabet[0]; // set it to 'a'
+                    }
+                    else
+                    {
+                        inputCopy[i] = alphabet[index + 1];
+                    }
+
+                    if (vowels.Contains(inputCopy[i]))
+                    {
+                        inputCopy[i] = Char.ToUpper(inputCopy[i]);
+                    }
+                }
+            }
+            return new string(inputCopy);
+        }
+
   static void Main() {  
     // keep this function call here
     
