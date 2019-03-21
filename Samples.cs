@@ -27,6 +27,7 @@ class MainClass {
     return words.OrderByDescending( s => RemovePunctuation(s).Length ).First();;
   }
  
+// helper method for removing non alphabet characters
  public static string RemovePunctuation(string word)
   {
       StringBuilder wordWithoutPunctuation = new StringBuilder();
@@ -55,7 +56,7 @@ class MainClass {
 
             for(int i = 0; i<= input.Length-1; i++)
             {
-                if (alphabet.Contains(input[i])) //if it is a letter 
+                if (alphabet.Contains(input[i])) // ignore if it is not a letter 
                 {
                     int index = Array.IndexOf(alphabet, input[i]);
                     if (index == alphabet.Length - 1) //is it the last letter? a.k.a 'z'
@@ -64,12 +65,12 @@ class MainClass {
                     }
                     else
                     {
-                        inputCopy[i] = alphabet[index + 1];
+                        inputCopy[i] = alphabet[index + 1]; // replace with next letter
                     }
 
                     if (vowels.Contains(inputCopy[i]))
                     {
-                        inputCopy[i] = Char.ToUpper(inputCopy[i]);
+                        inputCopy[i] = Char.ToUpper(inputCopy[i]); // replace with uppercase letter
                     }
                 }
             }
