@@ -27,7 +27,7 @@ class MainClass {
     return words.OrderByDescending( s => RemovePunctuation(s).Length ).First();;
   }
  
-// helper method for removing non alphabet characters
+  // helper method for removing non alphabet characters
  public static string RemovePunctuation(string word)
   {
       StringBuilder wordWithoutPunctuation = new StringBuilder();
@@ -78,8 +78,7 @@ class MainClass {
         }
 
   static void Main() {  
-    // keep this function call here
-    
+    // pass in one of the methods to test
     Console.WriteLine(FirstFactorial(Console.ReadLine()));
   } 
 }
