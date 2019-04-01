@@ -78,7 +78,7 @@ class MainClass {
         }
 
   static void Main() {  
-    // pass in one of the methods to test
+    // pass in one of the methods to test it
     Console.WriteLine(FirstFactorial(Console.ReadLine()));
   } 
 }
