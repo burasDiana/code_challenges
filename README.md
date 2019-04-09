@@ -1,2 +1,2 @@
-# code_challenges
-This repository is to store the code snippets from code challenges.
+# Challenges
+This repository is used to store the code snippets from various code challenges.
